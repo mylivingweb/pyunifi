@@ -162,19 +162,33 @@ class Controller(object):
     def get_alerts_unarchived(self):
         """Return a list of Alerts unarchived."""
         return self._api_write('stat/alarm', params={'archived': False})
-
+    """ Not in api doc 
+    https://ubntwiki.com/products/software/unifi-controller/api
     def get_statistics_last_24h(self):
-        """Returns statistical data of the last 24h"""
         return self.get_statistics_24h(time())
 
     def get_statistics_24h(self, endtime):
-        """Return statistical data last 24h from time"""
-
         params = {
             'attrs': ["bytes", "num_sta", "time"],
             'start': int(endtime - 86400) * 1000,
             'end': int(endtime - 3600) * 1000}
         return self._write(self._api_url() + 'stat/report/hourly.site', params)
+    """
+    def get_sitedpi_app(self):
+        """ 
+        Get DPI Stats for site by app
+        Requires a USG to be in site
+        """
+        params = {"type":"by_app", "cats": [255], "limit":50}
+        return self._api_read('stat/sitedpi', params)
+
+    def get_sitedpi_cat(self):
+        """ 
+        Get DPI Stats for site by cat
+        Requires a USG to be in site
+        """
+        params = {"type":"by_cat"}
+        return self._api_read('stat/sitedpi', params)
 
     def get_events(self):
         """Return a list of all Events."""

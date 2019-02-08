@@ -8,3 +8,4 @@ pyunifi.egg-info
 pyvenv.cfg
 pip-selfcheck.json
 Lib/
+testing.py

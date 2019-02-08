@@ -84,15 +84,23 @@ Return a list of all AP:s, with significant information about each.
 
 Return a list of all active clients, with significant information about each.
 
-### `get_statistics_last_24h(self)`
+~~### `get_statistics_last_24h(self)`~~
 
-Return statistical data of the last 24h
+~~Return statistical data of the last 24h~~
 
-### `get_statistics_24h(self, endtime)`
+~~### `get_statistics_24h(self, endtime)`~~
 
-Return statistical data last 24h from endtime
+~~Return statistical data last 24h from endtime~~
 
- - `endtime` -- the last time of statistics.
+~~- `endtime` -- the last time of statistics.~~
+
+### `get_sitedpi_app(self)`
+
+Return stats from dpi for apps, requires the site to have a USG
+
+### `get_sitedpi_cat(self)`
+
+Return stats from dpi for categories, requires the site to have a USG
 
 ### `get_users(self)`
 
@@ -227,3 +235,30 @@ License
 -------
 
 MIT
+
+### Category Codes
+
+| DPI Category Code | Name |
+| ----------------- | :--: |
+|0|Instant messaging|
+|1|P2P|
+|3|File Transfer|
+|4|Streaming Media|
+|5|Mail and Collaboration|
+|6|Voice over IP|
+|7|Database|
+|8|Games|
+|9|Network Management|
+|10|Remote Access Terminals|
+|11|Bypass Proxies and Tunnels|
+|12|Stock Market|
+|13|Web|
+|14|Security Update|
+|15|Web IM|
+|17|Business|
+|18|Network Protocols|
+|19|Network Protocols|
+|20|Network Protocols|
+|23|Private Protocol|
+|24|Social Network|
+|255|Unknown|
